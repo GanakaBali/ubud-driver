@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubud Local Driver - Authentic Bali Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ubud: {
+                            green: '#2E8B57',
+                            yellow: '#FFD700',
+                            brown: '#8B4513',
+                            light: '#F5F5DC'
+                        }
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: ' translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        pulseScale: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' }
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'fade-in-delay': 'fadeIn 0.8s ease-out 0.2s forwards',
+                        'fade-in-delay-2': 'fadeIn 0.8s ease-out 0.4s forwards',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-scale': 'pulseScale 2s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-ubud-green text-white py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+        <div class="text-xl font-bold">Ubud Local Driver</div>
+        <div class="hidden md:flex space-x-8">
+            <button onclick="scrollToSection('home')" class="hover:text-ubud-yellow transition">Home</button>
+            <button onclick="scrollToSection('bali-tours')" class="hover:text-ubud-yellow transition">Bali Tours</button>
+            <button onclick="scrollToSection('bali-drivers')" class="hover:text-ubud-yellow transition">Bali Driver</button>
+        </div>
+        <button onclick="openBookingPopup()" class="bg-ubud-yellow text-ubud-green px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition">Book Now</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-gradient-to-r from-ubud-green to-ubud-brown text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">Discover Bali with a Local Heart</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fade-in-delay">Authentic private tours led by 100% Ubud Balinese drivers</p>
+            <div class="space-y-4 animate-fade-in-delay-2">
+                <button onclick="scrollToSection('bali-tours')" class="bg-ubud-yellow text-ubud-green px-8 py-4 rounded-full text-lg font-bold hover:bg-opacity-90 transition transform hover:scale-105 hover:animate-pulse-scale">Explore Our Tours</button>
+                <p class="text-sm mt-4">No middlemen, fair pricing, personalized experiences</p>
+            </div>
+        </div>
+        <!-- Floating decorative elements -->
+        <div class="absolute top-1/4 left-10 w-16 h-16 bg-ubud-yellow rounded-full opacity-20 animate-float"></div>
+        <div class="absolute bottom-1/3 right-20 w-24 h-24 bg-ubud-yellow rounded-full opacity-10 animate-float animation-delay-1000"></div>
+        <div class="absolute top-1/3 right-1/4 w-20 h-20 bg-ubud-yellow rounded-full opacity-15 animate-float animation-delay-500"></div>
+    </section>
+
+    <!-- Tagline Options -->
+    <section class="py-12 bg-ubud-light text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-4">Our Promise to You</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-white px-6 py-3 rounded-full shadow-md animate-fade-in">Personalized Private Tours</span>
+                <span class="bg-white px-6 py-3 rounded-full shadow-md animate-fade-in-delay">Local Knowledge Beyond Tourist Spots</span>
+                <span class="bg-white px-6 py-3 rounded-full shadow-md animate-fade-in-delay-2">Supporting the Local Community</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white -mt-19">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 flex justify-center">
+                    <img 
+                        src="https://uploads.onecompiler.io/43c72bhcy/449nwa9k2/IMG-20260105-WA0006.jpg" 
+                        alt="Ubud Landscape"
+                        class="rounded-xl shadow-lg animate-fade-in"
+                        style="
+                            width: 90vw;
+                            max-height: 280px;
+                            object-fit: cover;
+                            object-position: center;
+                        "
+                    >
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-ubud-green animate-fade-in-delay">About Ubud Local Driver</h2>
+                    <p class="mb-4 text-lg leading-relaxed animate-fade-in-delay-2">We're proud locals from the heart of Bali's cultural center, Ubud. Our family-owned business connects travelers with authentic Bali experiences through our passion for our island home.</p>
+                    <p class="mb-4 text-lg leading-relaxed animate-fade-in-delay-3">Every driver is 100% local, deeply rooted in Ubud's traditions, and committed to sharing their love for Bali's hidden gems, local stories, and genuine hospitality.</p>
+                    <p class="text-lg leading-relaxed animate-fade-in-delay-4">When you choose us, you're not just getting transportation – you're gaining a local guide who knows Bali's secrets beyond the typical tourist spots.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bali Tours Section -->
+    <section id="bali-tours" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-ubud-green">Our Exclusive Tours</h2>
+            
+            <!-- Mobile Slider -->
+            <div id="tours-mobile-slider" class="splide md:hidden">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <!-- Tour 1 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBah8XMLbGcNoA1nTAIrjHnm76-W7uUunvxg&s" alt="Bali Waterfall" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Waterfall and Best Ubud Tour Packages</h3>
+                                    <p class="text-gray-600 mb-4">Discover the most beautiful waterfalls in Bali with our expert guide and explore the best of Ubud.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">8 Hours</span>
+                                        <span class="font-bold text-ubud-green">$85</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tour 2 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-2">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2024/05/The-West-Nusa-Penida-Island-Day-Tour-Package-M1.webp" alt="Nusa Penida Tour" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Best Nusa Penida Island Tour Packages</h3>
+                                    <p class="text-gray-600 mb-4">Explore the stunning beauty of Nusa Penida with our expert guides.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">1 Day</span>
+                                        <span class="font-bold text-ubud-green">$150</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tour 3 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-3">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2025/03/Bali-Lempuyang-Gate-of-Heaven-Tour-Packages-M1.webp" alt="Lempuyang Gate" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Lempuyang Gate of Heaven Tour Package</h3>
+                                    <p class="text-gray-600 mb-4">Visit the famous Lempuyang Gate with breathtaking views of Mount Agung.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">8 Hours</span>
+                                        <span class="font-bold text-ubud-green">$95</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tour 4 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-4">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Ulun-Danu-and-Tanah-Lot-Tour-Package-2.jpg" alt="Ulun Danu & Tanah Lot" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Ulun Danu and Tanah Lot Tour Package</h3>
+                                    <p class="text-gray-600 mb-4">Visit both Ulun Danu Beratan Temple and Tanah Lot temple on one tour.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">10 Hours</span>
+                                        <span class="font-bold text-ubud-green">$110</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tour 5 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-5">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Tanjung-Benoa-Uluwatu-Tour-Package-2.webp" alt="Tanjung Benoa & Uluwatu" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Tanjung Benoa & Uluwatu Tour Package</h3>
+                                    <p class="text-gray-600 mb-4">Enjoy the beach at Tanjung Benoa and watch sunset at Uluwatu Temple.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">12 Hours</span>
+                                        <span class="font-bold text-ubud-green">$130</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tour 6 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-6">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Kintamani-Volcano-View-Tour-Package-2A.webp" alt="Kintamani Volcano" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Kintamani Volcano View Tour Package</h3>
+                                    <p class="text-gray-600 mb-4">Witness spectacular sunrise views of Mount Batur and the volcanic landscape.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">10 Hours</span>
+                                        <span class="font-bold text-ubud-green">$100</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- New Tour Cards -->
+                        <!-- Bali White Water Rafting -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-7">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Ayung-River-White-Water-Rafting-Bali-2B.webp" alt="White Water Rafting" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali White Water Rafting</h3>
+                                    <p class="text-gray-600 mb-4">Experience the thrill of white water rafting on Bali's scenic rivers.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">4 Hours</span>
+                                        <span class="font-bold text-ubud-green">$65</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bali ATV Quad Bike Tour -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-8">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2025/03/Bali-ATV-Quad-Bike-Ubud-Adventure-and-Village-Tours-M1.webp" alt="ATV Quad Bike Tour" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali ATV Quad Bike Tour</h3>
+                                    <p class="text-gray-600 mb-4">Explore Bali's rugged terrain on an exciting ATV adventure.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">6 Hours</span>
+                                        <span class="font-bold text-ubud-green">$75</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bali Water Sport Adventure -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-9">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Water-Sport-Adventure-2B.webp" alt="Water Sport Adventure" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Water Sport Adventure</h3>
+                                    <p class="text-gray-600 mb-4">Dive into a day full of thrilling water sports activities.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">8 Hours</span>
+                                        <span class="font-bold text-ubud-green">$90</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bali Batur Sunrise Jeep Tour -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-10">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Batur-Sunrise-Jeep-Tour-HI2.webp" alt="Batur Sunrise Jeep Tour" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Batur Sunrise Jeep Tour</h3>
+                                    <p class="text-gray-600 mb-4">Witness the breathtaking sunrise from Mount Batur on a jeep tour.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">10 Hours</span>
+                                        <span class="font-bold text-ubud-green">$80</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mount Batur Sunrise Trekking -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-11">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Mount-Batur-Sunrise-Trekking-HI2.webp" alt="Mount Batur Trekking" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Mount Batur Sunrise Trekking</h3>
+                                    <p class="text-gray-600 mb-4">Hike to the summit of Mount Batur for an unforgettable sunrise view.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">8 Hours</span>
+                                        <span class="font-bold text-ubud-green">$70</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bali Blue Lagoon Snorkeling -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-12">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Blue-Lagoon-Snorkeling-2B.webp" alt="Blue Lagoon Snorkeling" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Blue Lagoon Snorkeling</h3>
+                                    <p class="text-gray-600 mb-4">Explore crystal clear waters and vibrant marine life at the Blue Lagoon.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">6 Hours</span>
+                                        <span class="font-bold text-ubud-green">$60</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden md:grid">
+                <!-- Bali Waterfall and Best Ubud Tour Packages -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBah8XMLbGcNoA1nTAIrjHnm76-W7uUunvxg&s" alt="Bali Waterfall" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Waterfall and Best Ubud Tour Packages</h3>
+                        <p class="text-gray-600 mb-4">Discover the most beautiful waterfalls in Bali with our expert guide and explore the best of Ubud.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">8 Hours</span>
+                            <span class="font-bold text-ubud-green">$85</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nusa Penida Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-2">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2024/05/The-West-Nusa-Penida-Island-Day-Tour-Package-M1.webp" alt="Nusa Penida Tour" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Best Nusa Penida Island Tour Packages</h3>
+                        <p class="text-gray-600 mb-4">Explore the stunning beauty of Nusa Penida with our expert guides.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">1 Day</span>
+                            <span class="font-bold text-ubud-green">$150</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lempuyang Gate Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-3">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2025/03/Bali-Lempuyang-Gate-of-Heaven-Tour-Packages-M1.webp" alt="Lempuyang Gate" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Lempuyang Gate of Heaven Tour Package</h3>
+                        <p class="text-gray-600 mb-4">Visit the famous Lempuyang Gate with breathtaking views of Mount Agung.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">8 Hours</span>
+                            <span class="font-bold text-ubud-green">$95</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ulun Danu & Tanah Lot Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-4">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Ulun-Danu-and-Tanah-Lot-Tour-Package-2.jpg" alt="Ulun Danu & Tanah Lot" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Ulun Danu and Tanah Lot Tour Package</h3>
+                        <p class="text-gray-600 mb-4">Visit both Ulun Danu Beratan Temple and Tanah Lot temple on one tour.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">10 Hours</span>
+                            <span class="font-bold text-ubud-green">$110</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tanjung Benoa & Uluwatu Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-5">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Tanjung-Benoa-Uluwatu-Tour-Package-2.webp" alt="Tanjung Benoa & Uluwatu" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Tanjung Benoa & Uluwatu Tour Package</h3>
+                        <p class="text-gray-600 mb-4">Enjoy the beach at Tanjung Benoa and watch sunset at Uluwatu Temple.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">12 Hours</span>
+                            <span class="font-bold text-ubud-green">$130</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kintamani Volcano Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-6">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Kintamani-Volcano-View-Tour-Package-2A.webp" alt="Kintamani Volcano" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Kintamani Volcano View Tour Package</h3>
+                        <p class="text-gray-600 mb-4">Witness spectacular sunrise views of Mount Batur and the volcanic landscape.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">10 Hours</span>
+                            <span class="font-bold text-ubud-green">$100</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- New Tour Cards -->
+                <!-- Bali White Water Rafting -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-7">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Ayung-River-White-Water-Rafting-Bali-2B.webp" alt="White Water Rafting" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali White Water Rafting</h3>
+                        <p class="text-gray-600 mb-4">Experience the thrill of white water rafting on Bali's scenic rivers.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">4 Hours</span>
+                            <span class="font-bold text-ubud-green">$65</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali ATV Quad Bike Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-8">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2025/03/Bali-ATV-Quad-Bike-Ubud-Adventure-and-Village-Tours-M1.webp" alt="ATV Quad Bike Tour" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali ATV Quad Bike Tour</h3>
+                        <p class="text-gray-600 mb-4">Explore Bali's rugged terrain on an exciting ATV adventure.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">6 Hours</span>
+                            <span class="font-bold text-ubud-green">$75</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali Water Sport Adventure -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-9">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Water-Sport-Adventure-2B.webp" alt="Water Sport Adventure" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Water Sport Adventure</h3>
+                        <p class="text-gray-600 mb-4">Dive into a day full of thrilling water sports activities.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">8 Hours</span>
+                            <span class="font-bold text-ubud-green">$90</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali Batur Sunrise Jeep Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-10">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Batur-Sunrise-Jeep-Tour-HI2.webp" alt="Batur Sunrise Jeep Tour" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Batur Sunrise Jeep Tour</h3>
+                        <p class="text-gray-600 mb-4">Witness the breathtaking sunrise from Mount Batur on a jeep tour.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">10 Hours</span>
+                            <span class="font-bold text-ubud-green">$80</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mount Batur Sunrise Trekking -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-11">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Mount-Batur-Sunrise-Trekking-HI2.webp" alt="Mount Batur Trekking" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mount Batur Sunrise Trekking</h3>
+                        <p class="text-gray-600 mb-4">Hike to the summit of Mount Batur for an unforgettable sunrise view.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">8 Hours</span>
+                            <span class="font-bold text-ubud-green">$70</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali Blue Lagoon Snorkeling -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-12">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Blue-Lagoon-Snorkeling-2B.webp" alt="Blue Lagoon Snorkeling" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Blue Lagoon Snorkeling</h3>
+                        <p class="text-gray-600 mb-4">Explore crystal clear waters and vibrant marine life at the Blue Lagoon.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">6 Hours</span>
+                            <span class="font-bold text-ubud-green">$60</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bali Drivers Section -->
+    <section id="bali-drivers" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-ubud-green">Bali Driver (Tour with Your Itinerary)</h2>
+            
+            <!-- Mobile Slider for Bali Driver Cards -->
+            <div id="drivers-mobile-slider" class="splide md:hidden">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <!-- Bali Driver with Toyota Avanza Card -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Driver-with-Toyota-Avanza-HI2.webp" alt="Toyota Avanza" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Driver with Toyota Avanza</h3>
+                                    <p class="text-gray-600 mb-4">Tour with your itinerary using comfortable Toyota Avanza vehicle.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">Per Day</span>
+                                        <span class="font-bold text-ubud-green">$65</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bali Driver with Toyota Innova Card -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Driver-with-Toyota-Innova-HI2.webp" alt="Toyota Innova" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Driver with Toyota Innova</h3>
+                                    <p class="text-gray-600 mb-4">Comfortable ride for groups with Toyota Innova vehicle.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">Per Day</span>
+                                        <span class="font-bold text-ubud-green">$85</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bali Driver with Toyota Hiace Card -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-2">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Driver-with-Toyota-Hiace-HI2.webp" alt="Toyota Hiace" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Driver with Toyota Hiace</h3>
+                                    <p class="text-gray-600 mb-4">Spacious option for larger groups with Toyota Hiace vehicle.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">Per Day</span>
+                                        <span class="font-bold text-ubud-green">$95</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Grid for Bali Driver Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 hidden md:grid">
+                <!-- Bali Driver with Toyota Avanza Card -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Driver-with-Toyota-Avanza-HI2.webp" alt="Toyota Avanza" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Driver with Toyota Avanza</h3>
+                        <p class="text-gray-600 mb-4">Tour with your itinerary using comfortable Toyota Avanza vehicle.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">Per Day</span>
+                            <span class="font-bold text-ubud-green">$65</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali Driver with Toyota Innova Card -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Driver-with-Toyota-Innova-HI2.webp" alt="Toyota Innova" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Driver with Toyota Innova</h3>
+                        <p class="text-gray-600 mb-4">Comfortable ride for groups with Toyota Innova vehicle.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">Per Day</span>
+                            <span class="font-bold text-ubud-green">$85</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali Driver with Toyota Hiace Card -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-2">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Driver-with-Toyota-Hiace-HI2.webp" alt="Toyota Hiace" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Driver with Toyota Hiace</h3>
+                        <p class="text-gray-600 mb-4">Spacious option for larger groups with Toyota Hiace vehicle.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">Per Day</span>
+                            <span class="font-bold text-ubud-green">$95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Why Choose Us Section -->
+    <section class="py-16 bg-ubud-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-ubud-green">Why Choose Ubud Local Driver?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition duration-300 animate-fade-in">
+                    <div class="text-4xl mb-4">👨</div>
+                    <h3 class="text-xl font-bold mb-4">100% Local Drivers</h3>
+                    <p class="text-gray-600">Every driver is a proud Ubud resident with deep local knowledge and personal connections throughout the island.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition duration-300 animate-fade-in-delay">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-4">Fair Pricing</h3>
+                    <p class="text-gray-600">No middlemen. Direct communication with our local drivers ensures transparent, reasonable rates for all tours.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition duration-300 animate-fade-in-delay-2">
+                    <div class="text-4xl mb-4">🌟</div>
+                    <h3 class="text-xl font-bold mb-4">Personalized Experiences</h3>
+                    <p class="text-gray-600">Custom itineraries crafted around your interests, with local insights that make every trip unique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Experience Message -->
+    <section class="py-16 bg-ubud-green text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6">Trusted by Travelers Since 2015</h2>
+                <p class="text-xl mb-8">With over 8 years of experience serving international visitors, we've built a reputation for authentic, reliable, and memorable Bali experiences.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="animate-fade-in">
+                        <div class="text-4xl font-bold mb-2">500+</div>
+                        <p>Happy International Visitors</p>
+                    </div>
+                    <div class="animate-fade-in-delay">
+                        <div class="text-4xl font-bold mb-2">98%</div>
+                        <p>Repeat Customers</p>
+                    </div>
+                    <div class="animate-fade-in-delay-2">
+                        <div class="text-4xl font-bold mb-2">24/7</div>
+                        <p>Local Support Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-ubud-green">Ready for Your Bali Adventure?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Book your private tour today and discover Bali through the eyes of a local. Experience the authentic heart of Ubud.</p>
+           
+            <button onclick="openBookingPopup()" class="bg-ubud-yellow text-ubud-green px-8 py-4 rounded-full text-xl font-bold hover:bg-opacity-90 transition transform hover:scale-105 hover:animate-pulse-scale">Book Your Tour Now</button>
+
+           
+            <p class="mt-4 text-gray-600">No middlemen, fair pricing, guaranteed local experience</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ubud-brown text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Ubud Local Driver</h3>
+                    <p class="text-ubud-light">Authentic Bali Tours Since 2015</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="mb-2">📍 Ubud, Bali, Indonesia</p>
+                    <p class="mb-2">📞 +62 812 3456 7890</p>
+                    <p>✉️ info@ubudlocaldriver.com</p>
+                </div>
+            </div>
+            <div class="border-t border-ubud-yellow mt-8 pt-8 text-center text-ubud-light">
+                <p>&copy; 2023 Ubud Local Driver. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Popup -->
+    <div id="bookingPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 relative">
+            <button onclick="closeBookingPopup()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-4 text-ubud-green">Book Your Tour</h2>
+            <form id="bookingForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-1">Full Name</label>
+                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ubud-green focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">Email Address</label>
+                    <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ubud-green focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ubud-green focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">Selected Tour</label>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ubud-green focus:border-transparent">
+                        <option value="">Select a tour</option>
+                        <option value="waterfall">Bali Waterfall and Best Ubud Tour Packages</option>
+                        <option value="penida">Nusa Penida Tour</option>
+                        <option value="lempuyang">Lempuyang Gate Tour</option>
+                        <option value="ulun-danu">Ulun Danu & Tanah Lot Tour</option>
+                        <option value="benoa">Tanjung Benoa & Uluwatu Tour</option>
+                        <option value="volcano">Kintamani Volcano Tour</option>
+                        <option value="avanza">Toyota Avanza Driver</option>
+                        <option value="innova">Toyota Innova Driver</option>
+                        <option value="hiace">Toyota Hiace Driver</option>
+                        <option value="rafting">Bali White Water Rafting</option>
+                        <option value="atv">Bali ATV Quad Bike Tour</option>
+                        <option value="watersport">Bali Water Sport Adventure</option>
+                        <option value="jeep">Bali Batur Sunrise Jeep Tour</option>
+                        <option value="trekking">Mount Batur Sunrise Trekking</option>
+                        <option value="snorkeling">Bali Blue Lagoon Snorkeling</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">Date</label>
+                    <input type="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ubud-green focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">Number of Guests</label>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ubud-green focus:border-transparent">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5+">5+ Guests</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">Special Requests</label>
+                    <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ubud-green focus:border-transparent"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-ubud-green text-white py-3 rounded-lg font-bold hover:bg-opacity-90 transition">Submit Booking Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Splide sliders
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize mobile slider for tours
+            const toursMobileSlider = new Splide('#tours-mobile-slider', {
+                perPage: 1,
+                gap: '1rem',
+                arrows: true,
+                pagination: false,
+                drag: true,
+                snap: true,
+                autoplay: false,
+                pauseOnHover: false,
+            });
+            
+            // Initialize mobile slider for drivers
+            const driversMobileSlider = new Splide('#drivers-mobile-slider', {
+                perPage: 1,
+                gap: '1rem',
+                arrows: true,
+                pagination: false,
+                drag: true,
+                snap: true,
+                autoplay: false,
+                pauseOnHover: false,
+            });
+            
+            // Mount sliders only on mobile devices
+            if (window.innerWidth < 768) {
+                toursMobileSlider.mount();
+                driversMobileSlider.mount();
+            }
+            
+            // Update sliders when window resizes
+            window.addEventListener('resize', function() {
+                if (window.innerWidth < 768) {
+                    if (!toursMobileSlider.is(':mounted')) {
+                        toursMobileSlider.mount();
+                    }
+                    if (!driversMobileSlider.is(':mounted')) {
+                        driversMobileSlider.mount();
+                    }
+                } else {
+                    if (toursMobileSlider.is(':mounted')) {
+                        toursMobileSlider.destroy();
+                    }
+                    if (driversMobileSlider.is(':mounted')) {
+                        driversMobileSlider.destroy();
+                    }
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Booking popup functions
+        function openBookingPopup() {
+            document.getElementById('bookingPopup').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeBookingPopup() {
+            document.getElementById('bookingPopup').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Close popup when clicking outside
+        document.addEventListener('click', function(event) {
+            const popup = document.getElementById('bookingPopup');
+            if (event.target === popup) {
+                closeBookingPopup();
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking request! We will contact you shortly.');
+            closeBookingPopup();
+            this.reset();
+        });
+    </script>
+</body>
+</html>
