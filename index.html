@@ -52,6 +52,7 @@
         <div class="hidden md:flex space-x-8">
             <button onclick="scrollToSection('home')" class="hover:text-ubud-yellow transition">Home</button>
             <button onclick="scrollToSection('bali-tours')" class="hover:text-ubud-yellow transition">Bali Tours</button>
+            <button onclick="scrollToSection('bali-activities')" class="hover:text-ubud-yellow transition">Bali Activities</button>
             <button onclick="scrollToSection('bali-drivers')" class="hover:text-ubud-yellow transition">Bali Driver</button>
         </div>
         <button onclick="openBookingPopup()" class="bg-ubud-yellow text-ubud-green px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition">Book Now</button>
@@ -468,6 +469,191 @@
         </div>
     </section>
 
+    <!-- Bali Activities Section -->
+    <section id="bali-activities" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-ubud-green">Bali Activities</h2>
+            
+            <!-- Mobile Slider -->
+            <div id="activities-mobile-slider" class="splide md:hidden">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <!-- Activity 1 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Ayung-River-White-Water-Rafting-Bali-2B.webp" alt="White Water Rafting" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali White Water Rafting</h3>
+                                    <p class="text-gray-600 mb-4">Experience the thrill of white water rafting on Bali's scenic rivers.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">4 Hours</span>
+                                        <span class="font-bold text-ubud-green">$65</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 2 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2025/03/Bali-ATV-Quad-Bike-Ubud-Adventure-and-Village-Tours-M1.webp" alt="ATV Quad Bike Tour" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali ATV Quad Bike Tour</h3>
+                                    <p class="text-gray-600 mb-4">Explore Bali's rugged terrain on an exciting ATV adventure.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">6 Hours</span>
+                                        <span class="font-bold text-ubud-green">$75</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 3 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-2">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Water-Sport-Adventure-2B.webp" alt="Water Sport Adventure" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Water Sport Adventure</h3>
+                                    <p class="text-gray-600 mb-4">Dive into a day full of thrilling water sports activities.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">8 Hours</span>
+                                        <span class="font-bold text-ubud-green">$90</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 4 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-3">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Batur-Sunrise-Jeep-Tour-HI2.webp" alt="Batur Sunrise Jeep Tour" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Batur Sunrise Jeep Tour</h3>
+                                    <p class="text-gray-600 mb-4">Witness the breathtaking sunrise from Mount Batur on a jeep tour.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">10 Hours</span>
+                                        <span class="font-bold text-ubud-green">$80</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 5 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-4">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Mount-Batur-Sunrise-Trekking-HI2.webp" alt="Mount Batur Trekking" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Mount Batur Sunrise Trekking</h3>
+                                    <p class="text-gray-600 mb-4">Hike to the summit of Mount Batur for an unforgettable sunrise view.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">8 Hours</span>
+                                        <span class="font-bold text-ubud-green">$70</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 6 -->
+                        <div class="splide__slide">
+                            <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-5">
+                                <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Blue-Lagoon-Snorkeling-2B.webp" alt="Blue Lagoon Snorkeling" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Bali Blue Lagoon Snorkeling</h3>
+                                    <p class="text-gray-600 mb-4">Explore crystal clear waters and vibrant marine life at the Blue Lagoon.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-ubud-green">6 Hours</span>
+                                        <span class="font-bold text-ubud-green">$60</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden md:grid">
+                <!-- Bali White Water Rafting -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Ayung-River-White-Water-Rafting-Bali-2B.webp" alt="White Water Rafting" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali White Water Rafting</h3>
+                        <p class="text-gray-600 mb-4">Experience the thrill of white water rafting on Bali's scenic rivers.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">4 Hours</span>
+                            <span class="font-bold text-ubud-green">$65</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali ATV Quad Bike Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2025/03/Bali-ATV-Quad-Bike-Ubud-Adventure-and-Village-Tours-M1.webp" alt="ATV Quad Bike Tour" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali ATV Quad Bike Tour</h3>
+                        <p class="text-gray-600 mb-4">Explore Bali's rugged terrain on an exciting ATV adventure.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">6 Hours</span>
+                            <span class="font-bold text-ubud-green">$75</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali Water Sport Adventure -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-2">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Water-Sport-Adventure-2B.webp" alt="Water Sport Adventure" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Water Sport Adventure</h3>
+                        <p class="text-gray-600 mb-4">Dive into a day full of thrilling water sports activities.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">8 Hours</span>
+                            <span class="font-bold text-ubud-green">$90</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali Batur Sunrise Jeep Tour -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-3">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Bali-Batur-Sunrise-Jeep-Tour-HI2.webp" alt="Batur Sunrise Jeep Tour" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Batur Sunrise Jeep Tour</h3>
+                        <p class="text-gray-600 mb-4">Witness the breathtaking sunrise from Mount Batur on a jeep tour.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">10 Hours</span>
+                            <span class="font-bold text-ubud-green">$80</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mount Batur Sunrise Trekking -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-4">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/10/Mount-Batur-Sunrise-Trekking-HI2.webp" alt="Mount Batur Trekking" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mount Batur Sunrise Trekking</h3>
+                        <p class="text-gray-600 mb-4">Hike to the summit of Mount Batur for an unforgettable sunrise view.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">8 Hours</span>
+                            <span class="font-bold text-ubud-green">$70</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bali Blue Lagoon Snorkeling -->
+                <div class="bg-ubud-light rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in-delay-5">
+                    <img src="https://www.daybalitour.com/wp-content/uploads/2023/11/Bali-Blue-Lagoon-Snorkeling-2B.webp" alt="Blue Lagoon Snorkeling" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bali Blue Lagoon Snorkeling</h3>
+                        <p class="text-gray-600 mb-4">Explore crystal clear waters and vibrant marine life at the Blue Lagoon.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-ubud-green">6 Hours</span>
+                            <span class="font-bold text-ubud-green">$60</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Bali Drivers Section -->
     <section id="bali-drivers" class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -727,6 +913,18 @@
                 pauseOnHover: false,
             });
             
+            // Initialize mobile slider for activities
+            const activitiesMobileSlider = new Splide('#activities-mobile-slider', {
+                perPage: 1,
+                gap: '1rem',
+                arrows: true,
+                pagination: false,
+                drag: true,
+                snap: true,
+                autoplay: false,
+                pauseOnHover: false,
+            });
+            
             // Initialize mobile slider for drivers
             const driversMobileSlider = new Splide('#drivers-mobile-slider', {
                 perPage: 1,
@@ -742,6 +940,7 @@
             // Mount sliders only on mobile devices
             if (window.innerWidth < 768) {
                 toursMobileSlider.mount();
+                activitiesMobileSlider.mount();
                 driversMobileSlider.mount();
             }
             
@@ -751,12 +950,18 @@
                     if (!toursMobileSlider.is(':mounted')) {
                         toursMobileSlider.mount();
                     }
+                    if (!activitiesMobileSlider.is(':mounted')) {
+                        activitiesMobileSlider.mount();
+                    }
                     if (!driversMobileSlider.is(':mounted')) {
                         driversMobileSlider.mount();
                     }
                 } else {
                     if (toursMobileSlider.is(':mounted')) {
                         toursMobileSlider.destroy();
+                    }
+                    if (activitiesMobileSlider.is(':mounted')) {
+                        activitiesMobileSlider.destroy();
                     }
                     if (driversMobileSlider.is(':mounted')) {
                         driversMobileSlider.destroy();
